@@ -1,0 +1,211 @@
+<html lang="en" class=""><head>
+  <link rel="icon" type="image/x-icon" href="primesys.jpg">
+  <title>?</title>
+    <meta charset="UTF-8">
+<style class="INLINE_PEN_STYLESHEET_ID">
+
+  @import url("https://fonts.googleapis.com/css2?family=Imbue&family=Volkhov&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  *:not(input) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  body {
+    height: 100vh;
+    overflow: hidden;
+    background: conic-gradient(from 0deg at 5rem 15rem, #000 95.25deg, #fff 95.5deg 155deg, #000 155.25deg) no-repeat fixed;
+    font-family: "Imbue", serif;
+  }
+  
+  .scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .door {
+    position: absolute;
+    top: 12rem;
+    left: 3rem;
+    width: 5rem;
+    height: 9rem;
+    background: #fff;
+    transform: skew(0deg, -30deg) scaleY(1.33333) translateX(5rem);
+  }
+  .door:after {
+    content: "";
+    position: absolute;
+    top: 0.25rem;
+    left: -20rem;
+    width: 20rem;
+    height: 10rem;
+    background: #000;
+  }
+  
+  .name {
+    position: absolute;
+    top: 15rem;
+    left: 10rem;
+  }
+  
+  .instructions {
+    width: 25rem;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 2rem;
+    font-family: "Volkhov", serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  
+  .text {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 12.5rem;
+    z-index: 2;
+    transform: skew(0deg, -30deg) scaleY(1.33333);
+  }
+  .text input {
+    background: transparent;
+    border: none;
+    font-family: "Imbue", serif;
+    font-size: 4.5rem;
+    color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+  }
+  .text input:focus {
+    outline: none;
+  }
+  
+  .shadow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    font-family: "Imbue", serif;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+    transform: skew(60deg, -30deg) scaleY(0.666667) translateY(5.75rem) scale(1, -1.5);
+    filter: blur(0.01rem);
+    height: 19rem;
+    padding-left: 15.5rem;
+    font-size: 4.5rem;
+  }
+  
+  .hyde {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    font-family: "Imbue", serif;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+    transform: skew(60deg, -30deg) scaleY(0.666667) translateY(5.75rem) scale(1, -1.5);
+    filter: blur(0.01rem);
+    height: 12.5rem;
+    padding-left: 9.75rem;
+    font-size: 4.75rem;
+    line-height: 2.48rem;
+    letter-spacing: 0.15rem;
+  }
+  
+  @media (max-width: 50rem) {
+    .scene {
+      background: conic-gradient(from 0deg at 0 11rem, #000 95.25deg, #fff 95.5deg 152deg, #000 152.25deg) no-repeat fixed;
+    }
+  
+    .instructions {
+      font-size: 0.85rem;
+      padding: 1rem;
+    }
+  
+    .door {
+      top: 10rem;
+      left: -2rem;
+      width: 2.5rem;
+      height: 4.5rem;
+    }
+  
+    .name {
+      top: 8.5rem;
+      left: 0;
+    }
+  
+    .instructions {
+      width: 100%;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+  }
+  @media (max-height: 20rem) {
+    .scene {
+      background: conic-gradient(from 0deg at 0 5rem, #000 95.25deg, #fff 95.5deg 152deg, #000 152.25deg) no-repeat fixed;
+    }
+  
+    .instructions {
+      width: 20rem;
+      align-items: flex-end;
+      justify-content: flex-start;
+      font-size: 0.75rem;
+      padding: 1rem;
+    }
+  
+    .door {
+      top: 5rem;
+      left: -3rem;
+      width: 2.5rem;
+      height: 4.5rem;
+    }
+  
+    .name {
+      top: -1rem;
+      left: -4rem;
+      transform: scale(0.75);
+    }
+  }
+    </style>
+ </head>
+  
+  <body data-new-gr-c-s-check-loaded="14.1070.0" data-gr-ext-installed="">
+    
+  <div class="scene">
+    
+    <div class="name">
+      <div class="text">
+        <input id="input" type="text" placeholder="YOU DIED" maxlength="12">
+      </div>
+      <div class="shadow">
+        <p class="shadow-text" onclick="back()">YOU DIED</p>
+      </div>
+    </div>
+    <div class="door"></div>
+    <div class="light"></div>
+  </div>
+    
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+    <script src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-d44fd02e-a5dd-1dee-baeb-984dc73c698b" crossorigin=""></script>
+  <script>
+    function back(){
+        window.location.assign("livingroom.html")
+    }
+  </script>
+  
+  </body></html>

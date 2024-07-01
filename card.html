@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" type="image/x-icon" href="primesys.jpg">
+  <title>?</title>
+<style>
+#mydivi {
+    left:10%;
+    background-image: url("https://www.legworkstudio.com/cards/01.png");
+    background-size:cover;
+}
+#mydivi:hover {
+  left:10%;
+  background-image: url("https://www.legworkstudio.com/cards/01.png");
+  background-size: 150px;
+}
+#mydivs {
+    left:45%;
+    background-image: url("https://www.legworkstudio.com/cards/02.png");
+    background-size:cover;
+  }
+  #mydivs:hover {
+    left:45%;
+    background-image: url("https://www.legworkstudio.com/cards/02.png");
+    background-size: 150px;
+  }
+#mydivr {
+    left:80%;
+    background-image: url("https://www.legworkstudio.com/cards/03.png");
+    background-size:cover;
+  }
+#mydivr:hover {
+    left:80%;
+    background-image: url("https://www.legworkstudio.com/cards/03.png");
+    background-size: 150px;
+  }
+#mydivheaderi {}
+#mydivheaders {}
+#mydivheaderr {}
+.header{}
+.divs{
+    position: absolute;
+    z-index: 9;
+    width: 100px;
+    height: 170px;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    top:30%;
+    border-radius:10%;
+    transition: border 1s;
+}
+.img{
+  height:70vh;
+  left:15%;
+  width:70vw;
+  top:15%;
+  background-color: white;
+  position:fixed;
+  text-align: center;
+}
+a{.
+  left: 45%;
+  background-color: bisque;
+  height:20px;
+  width:50px;
+}
+</style>
+<body>
+  <div class="img"id="bgr"><h1>DARKNESS RESIDES WITHIN</h1></div>
+  <div class="divs"id="mydivi" onclick="clikei()">
+  <div class="header"id="mydivheaderi"></div>
+</div>
+<div class="divs"id="mydivs"onclick="clikes()" >
+    <div class="header"id="mydivheaders"></div>
+  </div>
+<div class="divs"id="mydivr"onclick="cliker()" >
+    <div class="header"id="mydivheaderr"></div>
+  </div>
+<a class="a"href="comp2.html">Close this tab ( remember their traits)</a>
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydivi"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "headeri")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "headeri").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+dragElement(document.getElementById("mydivs"));
+
+function dragElement(elmnts) {
+  var pos5 = 0, pos6 = 0, pos7 = 0, pos8 = 0;
+  if (document.getElementById(elmnts.id + "headers")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnts.id + "headers").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnts.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(f) {
+    f = f || window.event;
+    f.preventDefault();
+    // get the mouse cursor position at startup:
+    pos7 = f.clientX;
+    pos8 = f.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(f) {
+    f = f || window.event;
+    f.preventDefault();
+    // calculate the new cursor position:
+    pos5 = pos7 - f.clientX;
+    pos6 = pos8 - f.clientY;
+    pos7 = f.clientX;
+    pos8 = f.clientY;
+    // set the element's new position:
+    elmnts.style.top = (elmnts.offsetTop - pos6) + "px";
+    elmnts.style.left = (elmnts.offsetLeft - pos5) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+dragElement(document.getElementById("mydivr"));
+
+function dragElement(elmntr) {
+  var pos9 = 0, pos10 = 0, pos11 = 0, pos12 = 0;
+  if (document.getElementById(elmntr.id + "headerr")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmntr.id + "headerr").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmntr.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(g) {
+    g = g || window.event;
+    g.preventDefault();
+    // get the mouse cursor position at startup:
+    pos11 = g.clientX;
+    pos12 = g.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(g) {
+    g = g || window.event;
+    g.preventDefault();
+    // calculate the new cursor position:
+    pos9 = pos11 - g.clientX;
+    pos10 = pos12 - g.clientY;
+    pos11 = g.clientX;
+    pos12 = g.clientY;
+    // set the element's new position:
+    elmntr.style.top = (elmntr.offsetTop - pos10) + "px";
+    elmntr.style.left = (elmntr.offsetLeft - pos9) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+function clikei(){
+  document.getElementById("bgr").innerHTML = "<h1>Creativity</h1><br>Creativity is a big part of this work.<br>What is knowing all of this code without putting it together creatively?<br>Web Dev is an art of its own. BINARY IN NATURE";
+  document.getElementById("mydivi").style.cssText = `
+  top: 0%; 
+  left: 0%;
+  transition: top 0.5s linear 0.5s;
+`;
+  document.getElementById("mydivs").style.cssText = `
+  top: 70%;
+  left:0%;
+  transition: left 0.5s linear 0.5s; 
+`;
+  document.getElementById("mydivr").style.cssText = `
+  top: 0%;
+  left: 80%;
+  transition: left 0.5s linear 0.5s; 
+`;}
+function clikes(){
+  document.getElementById("bgr").innerHTML = "<h1>Originality</h1><br>Originality is what this is all about, how do I make it <h2>Original</h2>most of my work is hand made and took time to develop. I think that the art of web dev is under appreciated and more could be done to improve the art of web dev.DECISIVE IN NATURE";
+  document.getElementById("mydivi").style.cssText = `
+  top: 70%; 
+  left: 0%;
+  transition: top 0.5s linear 0.5s;
+`;
+  document.getElementById("mydivs").style.cssText = `
+  top: 0%;
+  left:0%;
+  transition: top 0.5s linear 0.5s; 
+`;
+  document.getElementById("mydivr").style.cssText = `
+  top: 0%;
+  left: 80%;
+  transition: top 0.5s linear 0.5s;
+`;}
+function cliker(){
+  document.getElementById("bgr").innerHTML = "<h1>FORTITUDE</h1><br>I always pushed concepts, and brought in lots of cool features and art in this assignment. For 3 months, I spent at least 3h a day on this project. OCT IN NATURE";
+  document.getElementById("mydivi").style.cssText = `
+  top: 0%; 
+  left: 80%;
+  transition: top 0.5s linear 0.5s;
+`;
+  document.getElementById("mydivs").style.cssText = `
+  top: 70%;
+  left:0%;
+  transition: top 0.5s linear 0.5s;
+`;
+  document.getElementById("mydivr").style.cssText = `
+  top: 0%;
+  left: 0%;
+  transition: left 0.5s linear 0.5s; 
+`;}
+</script>
+
+</body>
+</html>

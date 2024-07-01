@@ -1,0 +1,42 @@
+<html><head><link rel="icon" type="image/x-icon" href="primesys.jpg">
+    <title>?</title>
+</head><body><iframe id="player"frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="Surprised Kitty (Original)" width="100%" height="100%" src="https://www.youtube.com/embed/0Bmhjf0rKe8?enablejsapi=1&amp;widgetid=1autoplay=1&mute=1"></iframe>
+<style>
+    body{
+        background-color: black;
+    }
+</style>
+    <script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/5784b7e4/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script>
+        var scriptUrl = 'https:\/\/www.youtube.com\/s\/player\/5784b7e4\/www-widgetapi.vflset\/www-widgetapi.js';try{var ttPolicy=window.trustedTypes.createPolicy("youtube-widget-api",{createScriptURL:function(x){return x}});scriptUrl=ttPolicy.createScriptURL(scriptUrl)}catch(e){}if(!window["YT"])var YT={loading:0,loaded:0};if(!window["YTConfig"])var YTConfig={"host":"https://www.youtube.com"};
+        if(!YT.loading){YT.loading=1;(function(){var l=[];YT.ready=function(f){if(YT.loaded)f();else l.push(f)};window.onYTReady=function(){YT.loaded=1;for(var i=0;i<l.length;i++)try{l[i]()}catch(e$0){}};YT.setConfig=function(c){for(var k in c)if(c.hasOwnProperty(k))YTConfig[k]=c[k]};var a=document.createElement("script");a.type="text/javascript";a.id="www-widgetapi-script";a.src=scriptUrl;a.async=true;var c=document.currentScript;if(c){var n=c.nonce||c.getAttribute("nonce");if(n)a.setAttribute("nonce",n)}var b=
+        document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()};
+    </script>
+
+    <script>
+
+        // create youtube player
+        var player;
+        function onYouTubePlayerAPIReady() {
+            player = new YT.Player('player', {
+              width: '100%',
+              height: '100%',
+              videoId: '0Bmhjf0rKe8',
+              events: {
+                onReady: onPlayerReady,
+                onStateChange: onPlayerStateChange
+              }
+            });
+        }
+
+        // autoplay video
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        // when video ends
+        function onPlayerStateChange(event) {        
+            if(event.data === 0) {          
+                window.location.assign("boss.html")
+            }
+        }
+    </script></body></html>
